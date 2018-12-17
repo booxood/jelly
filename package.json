@@ -1,0 +1,39 @@
+{
+  "name": "jelly",
+  "version": "0.0.1",
+  "main": "dist/jelly.cjs.js",
+  "module": "dist/jelly.ems.js",
+  "browser": "dist/jelly.umd.js",
+  "scripts": {
+    "lint": "eslint . --cache --fix",
+    "pretest": "npm run lint",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/booxood/jelly.git"
+  },
+  "author": "Liucw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/booxood/jelly/issues"
+  },
+  "homepage": "https://github.com/booxood/jelly#readme",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/preset-env": "7.2.0",
+    "eslint": "5.10.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "8.0.0",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "rollup": "0.68.0",
+    "rollup-plugin-babel": "4.1.0"
+  },
+  "files": [
+    "dist"
+  ]
+}

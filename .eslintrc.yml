@@ -1,0 +1,12 @@
+extends: standard
+env:
+  es6: true
+  node: true
+rules:
+  no-console: 1
+  object-curly-spacing:
+    - 2
+    - always
+  comma-dangle:
+    - 2
+    - always-multiline
