@@ -2,6 +2,7 @@ extends: standard
 env:
   es6: true
   node: true
+  browser: true
 rules:
   no-console: 1
   object-curly-spacing:
