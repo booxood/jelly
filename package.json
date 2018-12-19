@@ -1,6 +1,6 @@
 {
   "name": "jelly",
-  "version": "0.1.0-1",
+  "version": "0.1.0",
   "main": "dist/jelly.cjs.js",
   "module": "dist/jelly.ems.js",
   "browser": "dist/jelly.umd.js",
