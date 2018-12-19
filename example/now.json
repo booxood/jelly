@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "jelly",
+  "alias": ["jelly-example"],
+  "builds": [
+    { "src": "basic.html", "use": "@now/html-minifier" }
+  ]
+}

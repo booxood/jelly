@@ -3,6 +3,8 @@
 
 方便的实现类似旋转木马的效果
 
+[DEMO](https://jelly-example.now.sh/basic.html)
+
 ## 安装
 ```
 npm install --save jelly
