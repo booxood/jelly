@@ -22,6 +22,7 @@ class Jelly {
   }
   init () {
     this.count = this.parentNode.childElementCount
+    this.countTurn = this.count * this.opts.interval
     this.childs = Array.from(this.parentNode.children).map((el, i) => ({
       index: i,
       el,
@@ -54,26 +55,39 @@ class Jelly {
     setInterval(() => {
       turn += 1
       this.childs.forEach(child => {
-        if (
-          child.initAngle > turn - 90 &&
-          child.initAngle < turn + 90
-        ) {
-          child.angle = child.initAngle - turn
+        let initAngle = child.initAngle
+        // 是否是第一页在最后一段
+        let isFirstPageInLast = child.index === 0 && turn > this.countTurn - this.opts.interval
+        if (isFirstPageInLast) initAngle = child.initAngle + this.countTurn
+
+        if (initAngle >= turn - 90 && initAngle <= turn + 90) {
+          if (isFirstPageInLast) {
+            child.angle = (initAngle - turn + this.countTurn) % this.countTurn
+          } else {
+            child.angle = initAngle - turn
+          }
           child.angle %= 360
 
-          if (child.angle < 90 || child > -90) {
-            setStyle(child.el, {
+          if (child.angle <= 90 || child >= -90) {
+            const styles = {
               transform: rotateY(child.angle),
               display: child.defaultStyle.display,
-            })
-          } else {
-            setStyle(child.el, {
-              display: 'none',
-            })
+            }
+            if (isFirstPageInLast) {
+              styles.zIndex = 0
+            } else {
+              styles.zIndex = this.count - child.index
+            }
+            setStyle(child.el, styles)
+            return
           }
         }
+        // 不用显示
+        setStyle(child.el, {
+          display: 'none',
+        })
       })
-      turn %= this.count * this.opts.interval
+      turn %= this.countTurn
     }, 1000 / 60)
   }
 }
