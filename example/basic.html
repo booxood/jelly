@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>Jelly Example | Basic</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: none;
+    }
+    html, body, .main {
+      width: 100%;
+      height: 100%;
+      background-color: #ddd;
+    }
+    .page {
+      display: table;
+      text-align: center;
+    }
+    .page h1 {
+      font-size: 8em;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .page:nth-child(1) { color: #E74C3C; }
+    .page:nth-child(2) { color: #8E44AD; }
+    .page:nth-child(3) { color: #3498DB; }
+    .page:nth-child(4) { color: #16A085; }
+    .page:nth-child(5) { color: #2ECC71; }
+    .page:nth-child(6) { color: #F39C12; }
+    .page:nth-child(7) { color: #D35400; }
+  </style>
+</head>
+<body>
+  <div id="J_main" class="main">
+    <div class="page p1">
+      <h1>1</h1>
+    </div>
+    <div class="page p2">
+      <h1>2</h1>
+    </div>
+    <div class="page p3">
+      <h1>3</h1>
+    </div>
+    <div class="page p4">
+      <h1>4</h1>
+    </div>
+    <div class="page p5">
+      <h1>5</h1>
+    </div>
+    <div class="page p6">
+      <h1>6</h1>
+    </div>
+    <div class="page p7">
+      <h1>7</h1>
+    </div>
+  </div>
+  <script src="//cdn.jsdelivr.net/npm/jelly"></script>
+  <script type="text/javascript">
+    var j = new Jelly('J_main')
+    j.run()
+  </script>
+</body>
+</html>
